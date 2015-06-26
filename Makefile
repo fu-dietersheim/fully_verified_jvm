@@ -11,7 +11,7 @@ EXECUTABLE	= jvm
 all: clean $(OBJECTS) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	/opt/frama-c/bin/frama-c -wp -wp-rte -wp-proof alt-ergo main.c
+	/opt/frama-c/bin/frama-c -kernel-msg-key pp -wp -wp-rte -wp-out /tmp/frama/ -slevel 10 main.c
 	$(CC) -o $(EXECUTABLE) $(CFLAGS) $(LIBS) main.c
 
 

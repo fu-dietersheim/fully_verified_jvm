@@ -7,6 +7,7 @@ extern int puts(const char*);
 
 /*@ 
   @ assigns \nothing;
+  @ ensures *argv == \old(*argv);
   @*/ 
 int main(int argc, char** argv){
   UNUSED(argc)
